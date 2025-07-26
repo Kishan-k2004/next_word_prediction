@@ -26,6 +26,14 @@ def predict_next_word(model, tokenizer, text, max_sequence_len):
 
 # streamlit app
 st.title("Next Word Prediction With LSTM And Early Stopping")
+
+st.markdown("""
+**Note:** This model does not guarantee 100% accurate predictions.  
+The quality and accuracy of the predicted word depend heavily on the dataset used for training.  
+📚 *Dataset Used: Shakespeare's Hamlet (from the NLTK Gutenberg Corpus)*
+""")
+
+
 input_text=st.text_input("Enter the sequence of Words","To be or not to")
 if st.button("Predict Next Word"):
     max_sequence_len = model.input_shape[1] + 1  # Retrieve the max sequence length from the model input shape
